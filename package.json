@@ -1,42 +1,57 @@
 {
-    "name": "tacomail-client",
-    "version": "1.0.0",
-    "description": "An api client for the tacomail trashmail api",
-    "keywords": [
-        "email", "spammail", "spam", "trashmail", "tacomail"
-    ],
-    "repository": "github:leumasme/tacomail-client",
-    "author": "leumasme",
-    "license": "ISC",
-    "main": "./build/index.cjs",
-    "module": "./build/index.js",
-    "types": "./build/index.d.ts",
-    "exports": {
-        ".": {
-            "require": "./build/index.cjs",
-            "import": "./build/index.js",
-            "types": "./build/index.d.ts"
-        }
-    },
-    "scripts": {
-        "build": "tsup",
-        "prepack": "tsup",
-        "start": "npm run start -w example"
-    },
-    "files": [
-        "build"
-    ],
-    "workspaces": [
-        "example"
-    ],
-    "type": "module",
-    "dependencies": {
-        "axios": "^0.27.2",
-        "tslib": "^2.4.0"
-    },
-    "devDependencies": {
-        "ts-node": "^10.9.1",
-        "tsup": "^6.2.3",
-        "typescript": "^4.8.4"
+  "name": "tacomail-client",
+  "version": "2.0.0",
+  "description": "A TypeScript client library for the Tacomail temporary email service (API v2)",
+  "keywords": [
+    "email",
+    "spammail",
+    "spam",
+    "trashmail",
+    "tacomail",
+    "temporary-email",
+    "disposable-email",
+    "typescript"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leumasme/tacomail-client.git"
+  },
+  "author": "leumasme",
+  "license": "ISC",
+  "main": "./build/index.cjs",
+  "module": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.js",
+      "require": "./build/index.cjs"
     }
+  },
+  "scripts": {
+    "build": "tsup",
+    "prepack": "tsup",
+    "start": "npm run start -w example",
+    "test": "node --loader ts-node/esm test/test.ts"
+  },
+  "files": [
+    "build"
+  ],
+  "workspaces": [
+    "example"
+  ],
+  "type": "module",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "tslib": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }
